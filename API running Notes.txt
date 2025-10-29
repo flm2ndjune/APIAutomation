@@ -1,0 +1,512 @@
+-----------------------------------------
+Day 1 - 14th October - Tuesday 
+-----------------------------------------
+
+API Testing 
+
+HTTPS 
+
+HTTP+SSL = HTTPS [Outdated]
+
+HTTP + TLS = HTTPS [Latest] 
+TLS V1.0 
+TLS V2.0 
+TLS V3.0 
+
+-----------------------------------------
+Day 2 - 15th October - Wednesday
+-----------------------------------------
+
+Client & Server Architecture 
+
+HTTP Methods  or CRUD operations 
+
+Create --> POST 
+Read --> GET 
+Update --> PUT or PATCH 
+Delete --> DELETE 
+
+GET --> fetch / read / retrive 
+
+e.g browsing a website , view orders , downloading a file 
+
+POST -> create a new data on database / server 
+
+e.g : file uploading , user sign on 
+
+PUT --> to update/modify/replace the existing data 
+
+e.g profile updates on social media , change password 
+
+-> full updates or selective updates 
+
+PATCH : to update/modify/replace the existing data 
+
+selective updates or partial updates 
+
+DELETE : to delete the existing data on server / database 
+
+e.g : logout , delete an exiting address in e-commerce website 
+
+
+Status or Response Codes :
+
+1XX - 599
+
+1XX - 100 to 199 ==> Informational Reponses 
+2XX - 200 to 299 ==> SUCESSFUL Reponses
+3XX - 300 to 399 ==> REDIRECTINAL Reponses 
+4XX - 400 to 499 ==> CLIENT SIDE ERRORS 
+5XX - 500 to 599 ==> Server side errors 
+
+-----------------------------------------
+Day 3 - 16th October - Thursday
+-----------------------------------------
+
+API Evolution or Types 
+
+i) RPC
+
+XML 
+2000 - outdated 
+
+ii) SOAP APIs 
+-> simple object access protocols 
+
+
+XML 
+WSDL file 
+
+-> POST 
+
+90% outdated , 10 % usage 
+
+
+iii) REST APIs 
+
+Representational state transfer 
+-> is not a protocol -> architectural style 
+-> all http methods are allowed (get,post,put,patch and delete ) 
+-> all formats (text,html,xml,json ,yaml etc )
+
+-> google inc 
+-> 100 % usage 
+
+iv) Graph-QL APIs
+
+-> QUery Language 
+-> advanced format of Rest API's 
+
+-> introduced by facebook 
+
+
+*************************************
+Classifaction of APIs :
+**************************************
+i) Public APIs or Consumer APIs 
+e.g google maps , facebook apis ,weather apis etc ..
+ii) Private or Enterprise  APIs 
+
+e.g CRM API 
+
+GET /api/customers/{customerID}/orders 
+
+iii)Secured or Authorized APIs
+
+GitHub API , Google Drive APIs 
+
+iv) UnSecured or UnAuthorized APIs
+
+
+===========================================
+API syntax 
+===========================================
+
+httpMethod protocol baseURI endPoint queryParamter payload requestHeaders authorization 
+
+
+Basic Authorization , Bearer Access Token , 
+
+Mandatory : 
+
+httpMethod 
+protocol 
+baseURI 
+endPoint
+requestHeaders
+
+optional :
+queryParamter
+payload 
+authorization
+
+URL vs URI 
+
+URL uniform resource locator 
+yahoo.com
+
+URI uniform resource identifier 
+yahoo.com/news 
+
+
+-----------------------------------------
+Day 4 - 17th October - Friday
+-----------------------------------------
+
+API testing techniques :
+
+1) Response Code Testing 
+
+2XX 
+
+2) Response body testing 
+
+body/content 
+
+
+3) Response time testing 
+
+4) Response Headers Testing 
+
+5) INTEROPERABILTY Testing : 
+
+6) Performance/Load Testing 
+
+7) Data Driven Automation Testing 
+
+8) Assertions / Java Scripts Testing 
+
+9) API Changing Testing 
+
+
+=====================================================
+Postman 
+=====================================================
+
+https://www.postman.com/downloads/
+
+https://app.getpostman.com/join-team?invite_code=69796779966b159783a9b275328dc6379da53f2fd1cb81ba333a03b9a839bd97
+
+POSTMAN Hiererchy : 
+
+WORKSPACES --> COLLECTIONS --> FOLDERS --> SUB FOLDERS --> API Requests --> VARIABLES --> PRE-REQUEST SCripts--> TEST SCRIPTS 
+
+
+
+API Documentation Formats: 
+
+1) cURL 
+2) Swagger
+3) WSDL/XML 
+4) HTML
+5) GitHub
+
+
+
+Project 1 : 
+
+gorest.co.in 
+
+cUrl Examples for REST API
+
+List users
+curl -i 
+-H "Accept:application/json" 
+-H "Content-Type:application/json" 
+-H "Authorization: Bearer ACCESS-TOKEN" 
+-X
+GET "https://gorest.co.in/public/v2/users"
+
+Create user
+curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer ACCESS-TOKEN" -XPOST "https://gorest.co.in/public/v2/users" -d '{"name":"Tenali Ramakrishna", "gender":"male", "email":"tenali.ramakrishna@15ce.com", "status":"active"}'
+Update user
+curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer ACCESS-TOKEN" -XPATCH "https://gorest.co.in/public/v2/users/7491715" -d '{"name":"Allasani Peddana", "email":"allasani.peddana@15ce.com", "status":"active"}'
+Delete user
+curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer ACCESS-TOKEN" -XDELETE "https://gorest.co.in/public/v2/users/7491715"
+
+
+
+
+
+Project 1 alternate :
+
+we can also use this site sir 
+
+
+addon : https://reqres.in/
+
+
+401
+Unauthorized 
+
+Reason : this is a secured API , need Authorization
+
+Solution : Give proper Authorization or token
+
+422
+Unprocessable Entity
+
+[
+    {
+        "field": "email",
+        "message": "has already been taken"
+    }
+]
+
+reason : email is already taken 
+
+solution: provide unique test data 
+
+201
+Created
+
+{
+    "id": 8191744,
+    "name": "chandra sekhar",
+    "email": "chandra17102025@gmail.com",
+    "gender": "male",
+    "status": "active"
+}
+
+
+{
+    "status": "inactive",
+    "id": 8191744,
+    "name": "chandra sekhar",
+    "email": "chandra17102025@gmail.com",
+    "gender": "male"
+}
+
+204
+No Content
+
+
+404
+Not Found
+
+-----------------------------------------
+Day 5 - 21st October - Tuesday
+-----------------------------------------
+
+
+List users
+curl -i 
+-H "Accept:application/json" 
+-H "Content-Type:application/json" 
+-H "Authorization: Bearer ACCESS-TOKEN" 
+-X
+GET "https://gorest.co.in/public/v2/users"
+
+Exp Result : 
+
+1. Verify if response code is =  200 OK
+
+2. Verify if response body is recieved 
+
+3. Verify if response time < 2 seconds 
+
+4. Verify if response body is in JSON format 
+
+5. Verify if response body contains fields such as id,name,email,gender and status 
+
+???????????????????????????????????????????????/
+Assignment -1 
+????????????????????????????????????????????????
+Complete the test scripts for below APIs
+Create user
+curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer 5968dcc472361380ed8587436d7934523708c1c9bd1320348e2aa93fbd4a035a" -XPOST "https://gorest.co.in/public/v2/users" -d '{"name":"Tenali Ramakrishna", "gender":"male", "email":"tenali.ramakrishna@15ce.com", "status":"active"}'
+Update user
+curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer 5968dcc472361380ed8587436d7934523708c1c9bd1320348e2aa93fbd4a035a" -XPATCH "https://gorest.co.in/public/v2/users/7500974" -d '{"name":"Allasani Peddana", "email":"allasani.peddana@15ce.com", "status":"active"}'
+Delete user
+curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer 5968dcc472361380ed8587436d7934523708c1c9bd1320348e2aa93fbd4a035a" -XDELETE "https://gorest.co.in/public/v2/users/7500974"
+
+and send the postman collection to below email id 
+
+flmtechteam.testing@gmail.com
+or 
+
+send the link to below postman account 
+
+
+ahmed.selenium010@gmail.com
+
+
+
+??????????????????????????????????????????????????????
+
+
+-----------------------------------------
+Day 6 - 22nd October - Wednesday
+-----------------------------------------
+
+422
+Unprocessable Entity
+
+[
+    {
+        "field": "email",
+        "message": "has already been taken"
+    }
+]
+
+
+
+The Faker library enables you to generate sample data in Postman using predefined variables
+
+
+https://learning.postman.com/docs/tests-and-scripts/write-scripts/variables-list/
+
+
+
+
+Project 2: 
+
+https://reqres.in/
+
+https://reqres.in/api/users?page=2
+
+
+
+-----------------------------------------
+Day 7 - 24th October - Thursday
+-----------------------------------------
+
+Data Driven Testing 
+
+CSV file 
+
+JSON file 
+
+
+
+-----------------------------------------
+Day 8 - 25th October - Friday
+-----------------------------------------
+
+Newman - tool to run postman collections 
+
+how to install newman 
+
+first need to node.js 
+
+this will automatically npm also 
+
+node package manager 
+
+npm install -g newman
+
+npm install -g newman-reporter-htmlextra
+
+newman run REST_API_Project.postman_collection.json -r cli,html
+
+newman run REST_API_Project.postman_collection.json -r cli,extra-html
+
+newman run REST_API_Project.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export Reports/report.html
+
+
+-----------------------------------------
+Day 9 - 27th October - Monday
+-----------------------------------------
+
+Project 3: 
+
+https://thinking-tester-contact-list.herokuapp.com/
+
+401
+Unauthorized
+
+{
+    "error": "Please authenticate."
+}
+
+wobirab239@haotuwu.com
+reyaz123
+
+***********************************
+Rest Assured  
+***********************************
+
+Rest Assured is a Java DSL Lib 
+
+Open source 
+
+Rest APIs 
+
+https://github.com/rest-assured/rest-assured
+
+
+https://github.com/rest-assured/rest-assured/wiki/GettingStarted
+
+
+Features : 
+
+1. http methods : post,put,get,patch,delete etc ..
+2. integration with testing f/w : TestNG 
+3. inbuilt response validation
+4. support for xml and json: xmlpath and jsonpath 
+5. inbuilt logging : levels 
+6. support for BDD and non-BDD formats 
+7. Auths : basic, Bearer , api keys , oauth1,2 ,JWT 
+8. suuport headers : single/multiple headers , cookies 
+9. quesry/path paramters 
+10. Request/Response specifictaion, status code 
+11. integrate with any reporting tool : allure, chain test etc ..
+12. integrate with CI/CD tools jenkins , github actions etc ..
+13. Graph-QL : limited support 
+
+
+------------------------------------------------------------
+
+JAVA_HOME
+
+
+
+https://thinking-tester-contact-list.herokuapp.com/contacts
+
+import 3 types :
+
+import packagename.*;
+
+import packagename.ClassName;
+
+import static packagename.ClassName.*;
+
+import static java.lang.Math.*;
+
+https://github.com/flm5thdec/DataAndKeywordDrivenFramework
+
+
+
+---------------------------------------------
+Variables or Methods in RestAssured ClassName
+---------------------------------------------
+
+1. baseURI - static field to set base URI  "https://gorest.co.in"
+2. basePath - sets the common base path for all request e.g "public/v2"
+
+https://gorest.co.in/public/v2/users
+3. given(): RequestSpecification
+ - starts building a request specifictaion
+4.when():RequestSender 
+shortcut to start a reqeust chain 
+
+5.with() - Alias as given() e.g RestAssured.with().queryParam("id", 71425)
+
+HTTP Methods (CRUD  - Post , get , put , patch ,delete)
+6. get(String path) : Response 
+7. post(String path) : Response
+8.put(String path)
+9.patch(String path)
+10.delete(String path)
+
+-------------------------------------------------
+Methods in RequestSpecification
+-------------------------------------------------
+header(String headerName, String expectedValue);
+
+https://github.com/flm2ndjune/APIAutomation
+
+
+
+
+
