@@ -41,7 +41,7 @@ public class GoRestAPITest {
 		response.prettyPrint();
 		
 
-		JsonPath js=response.jsonPath();
+		
 		
 		
 		
