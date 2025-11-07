@@ -13,7 +13,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class GoRestAPITests {
 	
-	@Test
+	@Test(enabled = false)
 	public void getAllUsersWithQueryParam()
 	{
 		
@@ -21,12 +21,13 @@ public class GoRestAPITests {
 		RestAssured.baseURI = "https://gorest.co.in";
 		
 			
-		Response response = given().log().all()
+		Response response = given()
 	            .basePath("/public/v2/users")               
 	            .header("Authorization", "Bearer 5968dcc472361380ed8587436d7934523708c1c9bd1320348e2aa93fbd4a035a") // Token
 	            .header("Content-Type", "application/json")
 	            .queryParam("status", "inactive")
-	        .when().log().all()
+	            .queryParam("gender", "female")
+	        .when()
 	            .get()                                  
 	        .then()
 	            .statusCode(200)                           
@@ -37,7 +38,7 @@ public class GoRestAPITests {
 	}
 	
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void getAllUsersWithQueryParamAsMap()
 	{
 		
@@ -46,14 +47,14 @@ public class GoRestAPITests {
 		
 		HashMap<String, String> params=new HashMap<String, String>();
 		params.put("status", "active");
-		params.put("gender", "female");
+		params.put("gender", "male");
 			
-		Response response = given().log().all()
+		Response response = given()
 	            .basePath("/public/v2/users")               
 	            .header("Authorization", "Bearer 5968dcc472361380ed8587436d7934523708c1c9bd1320348e2aa93fbd4a035a") // Token
 	            .header("Content-Type", "application/json")
-	            .queryParam("",params)
-	        .when().log().all()
+	            .queryParams(params)
+	        .when()
 	            .get()                                  
 	        .then()
 	            .statusCode(200)                           

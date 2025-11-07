@@ -508,5 +508,129 @@ https://github.com/flm2ndjune/APIAutomation
 
 
 
+-------------------------------------------------
+Methods in Response 
+-------------------------------------------------
 
+statusCode():int 
+
+statusLine():String
+
+time():long
+
+
+FAILED: apitestswithnonbdd.GoRestAPITests.getAllUsersWithQueryParam
+java.lang.IllegalArgumentException: 
+Invalid number of path parameters. 
+Expected 0, was 1. Redundant path parameters are: status=active.
+
+
+
+java.lang.IllegalArgumentException: Cannot serialize because no JSON or XML serializer found in classpath.
+
+-----------------------------------------
+Day 12 - 31st October - Friday
+-----------------------------------------
+
+https://fakestoreapi.com/
+
+
+-------------------------------------------------
+Methods in JsonPath 
+-------------------------------------------------
+
+getInt(String):int 
+
+here String is the key o.p int is the value 
+
+getList(String):List<T> 
+
+
+******************************************************
+Assignment done by Madan Mohan 
+
+https://github.com/madan-7/AdactinHotelAppPOMwithPF
+
+********************************************************
+
+
+-----------------------------------------
+Day 13 - 3rd NOvember - Monday 
+-----------------------------------------
+
+Variables in postman : 
+
+
+Local
+Data
+Environment
+Collection
+Global 
+
+https://thinking-tester-contact-list.herokuapp.dev.com
+
+https://thinking-tester-contact-list.herokuapp.tst.com
+
+https://thinking-tester-contact-list.herokuapp.stg.com
+
+https://thinking-tester-contact-list.herokuapp.com
+
+
+POJO - Plain old Java Object 
+
+
+Java DSL 
+
+POJO  --> Any other formats ( JSON / XML  etc ) - serialization 
+
+Any other formats ( JSON / XML  etc ) --> POJO - Deserialization 
+
+-----------------------------------------
+Day 14 - 6th NOvember - Thursday 
+-----------------------------------------
+
+pojo - plain old java object 
+
+fields/variables : 
+
+pojo (java object) --> any other format (html/xml/json ) serailization (Marshelling)
+
+any other format(xml/json) --> POJO : Deserialization (UnMarshelling)
+
+
+POJO  - plain old java object
+fields/variables :  private vars 
+methods : getters/setters : public 
+constructors : default / paramterized 
+cannot have parent class/interface 
+cannot have business logic 
+only data carrier or data Models
+
+
+
+FAILED: createuserwithpojo.CreateUserTestWithPOJO.createUserTest
+java.lang.IllegalStateException: 
+Cannot serialize object because no JSON serializer found in classpath.
+ Please put Jackson (Databind), Gson, Johnzon, or Yasson in the classpath.
+	
+	
+Reason : RestAssured cannot serial pojo to json 
+Solution : add 	any of the below dependencies in pom.xml 
+Jackson (Databind), Gson, Johnzon, or Yasson 
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.20.0</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.42</version>
+</dependency>
 

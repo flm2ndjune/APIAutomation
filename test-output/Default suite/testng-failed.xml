@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="apitestswithnonbdd.GoRestAPITests">
+      <class name="createuserwithpojo.CreateUserTestWithPOJO">
         <methods>
-          <include name="getAllUsersWithQueryParamAsMap"/>
+          <include name="createUserTest"/>
         </methods>
-      </class> <!-- apitestswithnonbdd.GoRestAPITests -->
+      </class> <!-- createuserwithpojo.CreateUserTestWithPOJO -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
