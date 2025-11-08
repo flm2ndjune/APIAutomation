@@ -634,3 +634,15 @@ Jackson (Databind), Gson, Johnzon, or Yasson
     <version>1.18.42</version>
 </dependency>
 
+-----------------------------------------
+Day 15 - 7th NOvember - Friday 
+-----------------------------------------
+
+Lombok 
+
+Lombok Builder 
+
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor

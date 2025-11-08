@@ -1,4 +1,4 @@
-package createuserwithpojo;
+package createuserwithpojoandlambok;
 
 public class User {
 	
