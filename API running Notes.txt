@@ -635,7 +635,7 @@ Jackson (Databind), Gson, Johnzon, or Yasson
 </dependency>
 
 -----------------------------------------
-Day 15 - 7th NOvember - Friday 
+Day 16 - 7th NOvember - Friday 
 -----------------------------------------
 
 Lombok 
@@ -646,3 +646,62 @@ Lombok Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
+-----------------------------------------
+Day 17 - 10th November - Monday 
+-----------------------------------------
+
+Serialization
+
+pojo --> json /xml 
+
+
+DeSerialization 
+
+json --> pojo 
+
+
+Get :  
+
+Request 
+no request body ( No Serialization)
+
+Response 
+DeSerialization (body json -> pojo)
+-----------------------------------------
+POST :  
+Request
+request body (Serialization json -> pojo) 
+Response : 
+DeSerialization (body json -> pojo)
+-----------------------------------------
+Put/Patch : 
+Request
+request body (Serialization json -> pojo) 
+Response : 
+DeSerialization (body json -> pojo)
+--------------------------------------------
+Delete:
+Request 
+no request body ( No Serialization)
+Response : 
+no response body (No DeSerialization) 
+
+
+-------------------------------------------
+
+ObjectMapper 
+
+.MismatchedInputException: 
+Cannot deserialize value of type `deserialization.User`
+ from Array value (token `JsonToken.START_ARRAY`)
+ 
+ 
+???????????????????????????????????????????????????
+
+Use Serialization for 
+UPdate and Delete APIs 
+
+https://gorest.co.in/
+
+??????????????????????????????????????????????????????
